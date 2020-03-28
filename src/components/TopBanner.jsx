@@ -1,39 +1,33 @@
 import React from 'react'
-import PropTypes from 'prop-types'
+import {useState, useEffect} from 'react'
+import { Divider } from '@material-ui/core'
 
 
-export default class TopBanner extends React.Component {
+function TopBanner(props){
 
-  constructor(props){
-    super(props)
-    this.state = {
-      date: new Date()
-    }
-
-    this.tick = this.tick.bind(this)
-
+  const [time, setTime] = useState(new Date())
+  
+  const tick = () => {
+    const date = new Date()
+    setTime(date)
   }
 
-  tick(){
-    this.setState((state, props) => (
-       {date: new Date()}))
-  }
 
-  componentDidMount(){
-    this.timeID = setInterval(() => {
-      this.tick()
-    }, 1000);
-  }
+  useEffect(() => {
+    const timerId = setInterval(()=>{
+        tick();
+      }, 1000)
+  }, [])
 
-  componentWillUnmount() {
-    clearInterval(this.timerID);  }
-
-  render() {
-    return (
-      <div className="">
+  return (
+    <div className="">
         <h1>Coronavirus Realtime</h1>
-        {this.state.date.toUTCString()}
-      </div>
-    )
-  }
+        {time.toUTCString()}
+    </div>
+  )
+
+
+
 }
+
+export default TopBanner

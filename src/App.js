@@ -1,5 +1,5 @@
 import React from 'react';
-import './App.css';
+import './App.scss';
 
 import TopBanner from './components/TopBanner'
 import News from './components/News'
@@ -11,7 +11,8 @@ function App() {
       <header className="App-header">
         <TopBanner />
       </header>
-      <News />
+      
+      {/* <News /> */}
       <Album />
     </div>
   );

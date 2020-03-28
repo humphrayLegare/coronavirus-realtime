@@ -19,8 +19,8 @@ export default class News extends Component {
     //create headers
     let httpHeaders = {
       'Accept':'applications/json',
-      // 'x-api-key': process.env.REACT_APP_NEWS_API_KEY
     }
+    
     let headers = new Headers(httpHeaders)
 
     //create request
