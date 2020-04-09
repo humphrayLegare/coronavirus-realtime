@@ -1,12 +1,11 @@
 import React from 'react'
 import {useState, useEffect} from 'react'
-import { Divider } from '@material-ui/core'
 
 
 function TopBanner(props){
 
   const [time, setTime] = useState(new Date())
-  
+
   const tick = () => {
     const date = new Date()
     setTime(date)
@@ -25,7 +24,6 @@ function TopBanner(props){
         {time.toUTCString()}
     </div>
   )
-
 
 
 }
